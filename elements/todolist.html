@@ -1,0 +1,16 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<dom-module id="todo-list">
+  <template is="dom-repeat" items="{{todos}}">
+    <todo checked="item.checked">
+      {{item.text}}
+    </todo>
+  </template>
+  <script>
+    Polymer({
+      is: "todo-list",
+      ready: function() {
+        this.todos = [];
+      }
+    });
+  </script>
+</dom-module>
