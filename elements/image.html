@@ -1,0 +1,34 @@
+<dom-module id="poly-image">
+  <style>
+    :host {
+      width: var(--image-width);
+      height: var(--image-height)
+    }
+  </style>
+  <template>
+    <div class="image-wrapper">
+      <img src="{{source}}" alt="{{alt}}">
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: "poly-image",
+      ready: function() {
+        // var styles = JSON.parse(this.styles);
+        // this.applyStyles({width: this.width, height: this.height});
+      },
+      applyStyles: function(styles) {
+        console.log('styles', styles)
+        this.customStyle['--image-width'] = styles.width;
+        this.customStyle['--image-height'] = styles.height;
+        this.updateStyles();
+      },
+      properties: {
+        source: String,
+        alt: String,
+        width: Number,
+        height: Number
+      }
+    });
+  </script>
+</dom-module>
