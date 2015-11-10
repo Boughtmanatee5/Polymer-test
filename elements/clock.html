@@ -9,7 +9,6 @@
       is: "poly-clock",
       ready: function() {
         this.time = new Date();
-        console.log("Polymer ready");
         setInterval(function() {
           this.time = new Date();
         }.bind(this), 1000)
