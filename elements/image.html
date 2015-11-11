@@ -1,11 +1,22 @@
 <dom-module id="poly-image">
-  <style>
-    :host {
-      width: var(--image-width);
-      height: var(--image-height)
-    }
-  </style>
+
   <template>
+
+    <style>
+
+      :host {
+        --image-width-default: 300px;
+        --image-height-default: 300px;
+      }
+
+      .image-wrapper {
+        background: red;
+        width: var(--image-width, --image-width-default);
+        height: var(--image-height, --image-height-default);
+      }
+
+    </style>
+
     <div class="image-wrapper">
       <img src="{{source}}" alt="{{alt}}">
     </div>
@@ -15,10 +26,9 @@
       is: "poly-image",
       ready: function() {
         // var styles = JSON.parse(this.styles);
-        // this.applyStyles({width: this.width, height: this.height});
+        this.applyStyles({width: this.width, height: this.height});
       },
       applyStyles: function(styles) {
-        console.log('styles', styles)
         this.customStyle['--image-width'] = styles.width;
         this.customStyle['--image-height'] = styles.height;
         this.updateStyles();

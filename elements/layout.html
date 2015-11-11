@@ -1,0 +1,24 @@
+<dom-module id="layout">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+
+  <template>
+    <content></content>
+  </template>
+
+  <script>
+    Polymer({
+      is: "layout",
+      ready: function() {
+
+      },
+      properties: {
+        type: String,
+        template: String
+      }
+    });
+  </script>
+</dom-module>

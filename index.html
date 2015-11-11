@@ -4,11 +4,24 @@
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="elements/clock.html">
     <link rel="import" href="elements/image.html">
+    <link rel="import" href="elements/element.html">
   </head>
   <body>
-    <poly-clock></poly-clock>
-    <base-element>
-      <poly-image source="content/rainbowpanda.png" alt="cool illustration of a panda" width="300", height="300"></poly-image>
-    </base-element>
+    <layout>
+      <poly-clock></poly-clock>
+      <div class="container">
+        <div class="right-column">
+          <base-element selected="false" hasContent="false">
+            <poly-image source="content/rainbowpanda.png" width="200" height="150"></poly-image>
+          </base-element>
+          <base-element>
+            <poly-image source="content/rainbowpanda.png" width="500" height="300"></poly-image>
+          </base-element>
+        </div>
+        <div class="left-column">
+          <base-element></base-element>
+        </div>
+      </div>
+    </layout>
   </body>
 </html>
